@@ -1,0 +1,29 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: f.rem(16);
+
+    .logo {
+        width: 100px;
+    }
+
+    nav {
+        ul {        
+            display: flex;
+            gap: f.rem(16);
+            /* gap: 1%; */
+
+            li {
+
+                a {
+                    color: var(--x-d-blue);
+                    font-size: f.rem(14);
+                }
+            }
+        }
+    }
+}
