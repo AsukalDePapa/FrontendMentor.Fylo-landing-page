@@ -1,0 +1,81 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+@use '../utils/fonts' as font;
+
+.raleway {
+    font-weight: 400;
+    font-family: font.$raleway;
+}
+
+.raleway-bold {
+    font-weight: 700;
+    font-family: font.$raleway;
+}
+
+.open-sans {
+    font-weight: 400;
+    font-family: font.$open-sans;
+}
+
+.form {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    gap: f.rem(16);
+
+    input,
+    button {
+        width: 95%;
+        border-radius: f.rem(5);
+    }
+
+    input[type='text'] {
+        padding: f.rem(16) f.rem(24);
+        border: 1px solid var(--x-d-blue);
+
+        &::placeholder {
+            color: var(--l-gray);
+        }
+    }
+
+    button {
+        padding: f.rem(16);
+        background-color: var(--bright-blue);
+        color: white;
+    }
+}
+
+.form-2 {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    gap: f.rem(16);
+
+    input,
+    button {
+        width: 80%;
+        border-radius: f.rem(5);
+    }
+
+    input[type='text'] {
+        padding: f.rem(16) f.rem(24);
+        border: none;
+
+        &::placeholder {
+            color: var(--l-gray);
+        }
+    }
+
+    button {
+        padding: f.rem(16);
+        background-color: var(--bright-blue);
+        color: white;
+    }
+}
+
+/* remove later */
+/* header,
+main,
+section.features {
+    display: none;
+} */
