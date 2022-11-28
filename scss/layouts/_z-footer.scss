@@ -1,0 +1,87 @@
+@use '../utils/functions' as f;
+@use '../utils/breakpoints' as bp;
+
+footer {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: 5px;
+    background-color: var(--x-d-blue);
+    color: white;
+    padding: f.rem(38) f.rem(24);
+
+    .footer-logo {
+        margin-bottom: f.rem(32);
+
+        svg {
+            path {
+                fill: white;
+            }
+        }
+    }
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: f.rem(32);
+
+    .contacts {
+        display: grid;
+        gap: f.rem(16);
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: f.rem(16);
+        }
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(32);
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(16);
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .socials {
+        display: flex;
+        gap: f.rem(16);
+        align-items: center;
+        justify-content: center;
+
+        a {
+            color: white;
+            display: grid;
+            place-content: center;
+            width: f.rem(30);
+            height: f.rem(30);
+            border: 1px solid white;
+            border-radius: 50%;
+            padding: f.rem(10);
+
+            .fa-brands {
+                font-size: f.rem(16);
+            }
+        }
+    }
+}
+
+.attribution { 
+    position: absolute;
+    bottom: 0;
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
