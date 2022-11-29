@@ -142,13 +142,13 @@ section.features article p {
 }
 section.features article .link {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   margin-inline: auto;
 }
 section.features article .link a {
   color: var(--moderate-cyan);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 section.features article .link img {
   width: 25px;
