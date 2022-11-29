@@ -56,13 +56,13 @@ section.features {
 
         .link {
             position: relative;
-            display: flex;
-            align-items: center;
-            gap: f.rem(16);
             margin-inline: auto;
 
             a {
                 color: var(--moderate-cyan);
+                display: flex;
+                align-items: center;
+                gap: f.rem(16);
             }
 
             img {
