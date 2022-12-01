@@ -2,10 +2,12 @@
 @use '../utils/functions' as f;
 
 header {
+    margin-inline: auto;
+    width: min(90%, f.rem(1440));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: f.rem(16);
+    padding-block: f.rem(16);
 
     .logo {
         width: 100px;
@@ -22,6 +24,21 @@ header {
                 a {
                     color: var(--x-d-blue);
                     font-size: f.rem(14);
+                }
+            }
+        }
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        nav {
+            ul {
+                gap: f.rem(64);
+
+                li {
+
+                    a {
+                        font-size: f.rem(18);
+                    }
                 }
             }
         }
