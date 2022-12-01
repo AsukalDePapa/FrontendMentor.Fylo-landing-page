@@ -23,46 +23,76 @@
     grid-template-columns: 1fr;
     gap: f.rem(16);
 
-    input,
-    button {
-        width: 95%;
-        border-radius: f.rem(5);
-    }
+    .email-container {
+        position: relative;
+        width: 100%;
 
-    input[type='text'] {
-        padding: f.rem(16) f.rem(24);
-        border: 1px solid var(--x-d-blue);
+        .email-error {
+            border:rgb(255, 88, 88) 1px solid;
+        }
+    
+        input {
+            border-radius: f.rem(5);
+            display: block;
+            outline: none;
+            width: 95%;
+            padding: f.rem(16) f.rem(24);
+            border: 1px solid var(--x-d-blue);
 
-        &::placeholder {
-            color: var(--l-gray);
+            &::placeholder {
+                color: var(--l-gray);
+            }
+        }
+
+        .error {
+            color: rgb(255, 88, 88);
+            position: absolute;
+            bottom: -20px;
         }
     }
 
     button {
+        width: 95%;
+        border-radius: f.rem(5);
         padding: f.rem(16);
         background-color: var(--bright-blue);
         color: white;
+
+        &:hover {
+            background-color: var(--bright-blue-hover);
+        }
     }
 }
 
 .form-2 {
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr;
-    gap: f.rem(16);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    gap: f.rem(32);
 
-    input,
-    button {
-        width: 80%;
-        border-radius: f.rem(5);
-    }
+    .email-container {
+        position: relative;
+        width: 100%;
 
-    input[type='text'] {
-        padding: f.rem(16) f.rem(24);
-        border: none;
+        .email-error {
+            border:rgb(255, 88, 88) 1px solid;
+        }
 
-        &::placeholder {
-            color: var(--l-gray);
+        input {
+            width: 80%;
+            border-radius: f.rem(5);
+            padding: f.rem(16) f.rem(24);
+            border: none;
+    
+            &::placeholder {
+                color: var(--l-gray);
+            }
+        }
+
+        .error {
+            position: absolute;
+            bottom: -20px;
         }
     }
 
@@ -70,12 +100,19 @@
         padding: f.rem(16);
         background-color: var(--bright-blue);
         color: white;
+        width: 80%;
+        border-radius: f.rem(5);
+
+        &:hover {
+            background-color: var(--bright-blue-hover);
+        }
     }
 }
 
-/* remove later */
 /* header,
 main,
+section,
+section.early-access,
 section.features {
     display: none;
 } */
