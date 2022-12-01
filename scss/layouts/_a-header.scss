@@ -30,6 +30,10 @@ header {
     }
 
     @include bp.breakpointMin(medium-screen) {
+        .logo {
+            width: 150px;
+        }
+
         nav {
             ul {
                 gap: f.rem(64);
