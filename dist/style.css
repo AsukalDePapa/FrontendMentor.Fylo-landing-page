@@ -5,6 +5,7 @@
   /* Accent */
   --bright-blue: hsl(224, 93%, 58%);
   --moderate-cyan: hsl(170, 45%, 43%);
+  --bright-blue-hover: hsl(224, 100%, 75%);
   /* Neutral */
   --l-grayish-blue: hsl(240, 75%, 98%);
   --l-gray: hsl(0, 0%, 75%);
@@ -75,10 +76,12 @@ hr {
 }
 
 header {
+  margin-inline: auto;
+  width: min(90%, 90rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding-block: 1rem;
 }
 header .logo {
   width: 100px;
@@ -92,6 +95,14 @@ header nav ul li a {
   color: var(--x-d-blue);
   font-size: 0.875rem;
 }
+@media (min-width: 48.75em) {
+  header nav ul {
+    gap: 4rem;
+  }
+  header nav ul li a {
+    font-size: 1.125rem;
+  }
+}
 
 main {
   width: min(90%, 90rem);
@@ -103,6 +114,7 @@ main {
   gap: 3rem;
 }
 main article {
+  width: min(100%, 43.75rem);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -115,6 +127,31 @@ main article h1 {
 main article p {
   color: var(--x-d-blue);
   font-size: 0.9375rem;
+}
+@media (min-width: 48.75em) {
+  main {
+    flex-direction: row-reverse;
+    justify-content: unset;
+  }
+  main article {
+    text-align: left;
+  }
+  main article h1 {
+    font-size: 2.1875rem;
+    line-height: 1.5;
+  }
+  main article .form {
+    display: grid;
+    gap: 0rem;
+    grid-template-columns: 60% 40%;
+  }
+  main article .form .email-container {
+    width: 100%;
+  }
+  main article .form .email-container input {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 section.features {
@@ -197,6 +234,28 @@ section.features article .testimonial .user .user-info span {
   color: var(--dstrtd-blue);
   font-size: 0.625rem;
 }
+@media (min-width: 48.75em) {
+  section.features {
+    flex-direction: row-reverse;
+  }
+  section.features article h2 {
+    text-align: left;
+    font-size: 2.5rem;
+  }
+  section.features article p {
+    width: min(100%, 31.25rem);
+  }
+  section.features article .link {
+    width: 30%;
+    margin: 0;
+  }
+  section.features article .link a {
+    text-align: left;
+  }
+  section.features article .testimonial {
+    margin: 0;
+  }
+}
 
 section.early-access {
   background-color: var(--dstrtd-blue);
@@ -205,6 +264,7 @@ section.early-access {
   text-align: center;
 }
 section.early-access article {
+  width: min(100%, 29.375rem);
   display: grid;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
@@ -215,6 +275,34 @@ section.early-access article h3 {
 section.early-access article p {
   font-size: 0.9375rem;
   line-height: 1.5;
+}
+@media (min-width: 48.75em) {
+  section.early-access {
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    /* gap: f.rem(400); */
+  }
+  section.early-access article {
+    text-align: left;
+  }
+  section.early-access article h3 {
+    font-size: 2rem;
+  }
+  section.early-access .form-2 {
+    width: 40%;
+  }
+  section.early-access .form-2 .email-container {
+    width: 100%;
+  }
+  section.early-access .form-2 .email-container input {
+    width: 100%;
+    outline: none;
+  }
+  section.early-access .form-2 button {
+    width: 45%;
+    margin-right: auto;
+  }
 }
 
 .raleway {
@@ -238,70 +326,100 @@ section.early-access article p {
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-.form input,
-.form button {
-  width: 95%;
-  border-radius: 0.3125rem;
+.form .email-container {
+  position: relative;
+  width: 100%;
 }
-.form input[type=text] {
+.form .email-container .email-error {
+  border: rgb(255, 88, 88) 1px solid;
+}
+.form .email-container input {
+  border-radius: 0.3125rem;
+  display: block;
+  outline: none;
+  width: 95%;
   padding: 1rem 1.5rem;
   border: 1px solid var(--x-d-blue);
 }
-.form input[type=text]::-moz-placeholder {
+.form .email-container input::-moz-placeholder {
   color: var(--l-gray);
 }
-.form input[type=text]:-ms-input-placeholder {
+.form .email-container input:-ms-input-placeholder {
   color: var(--l-gray);
 }
-.form input[type=text]::placeholder {
+.form .email-container input::placeholder {
   color: var(--l-gray);
+}
+.form .email-container .error {
+  color: rgb(255, 88, 88);
+  position: absolute;
+  bottom: -20px;
 }
 .form button {
+  width: 95%;
+  border-radius: 0.3125rem;
   padding: 1rem;
   background-color: var(--bright-blue);
   color: white;
+}
+.form button:hover {
+  background-color: var(--bright-blue-hover);
 }
 
 .form-2 {
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  gap: 2rem;
 }
-.form-2 input,
-.form-2 button {
+.form-2 .email-container {
+  position: relative;
+  width: 100%;
+}
+.form-2 .email-container .email-error {
+  border: rgb(255, 88, 88) 1px solid;
+}
+.form-2 .email-container input {
   width: 80%;
   border-radius: 0.3125rem;
-}
-.form-2 input[type=text] {
   padding: 1rem 1.5rem;
   border: none;
 }
-.form-2 input[type=text]::-moz-placeholder {
+.form-2 .email-container input::-moz-placeholder {
   color: var(--l-gray);
 }
-.form-2 input[type=text]:-ms-input-placeholder {
+.form-2 .email-container input:-ms-input-placeholder {
   color: var(--l-gray);
 }
-.form-2 input[type=text]::placeholder {
+.form-2 .email-container input::placeholder {
   color: var(--l-gray);
+}
+.form-2 .email-container .error {
+  position: absolute;
+  bottom: -20px;
 }
 .form-2 button {
   padding: 1rem;
   background-color: var(--bright-blue);
   color: white;
+  width: 80%;
+  border-radius: 0.3125rem;
+}
+.form-2 button:hover {
+  background-color: var(--bright-blue-hover);
 }
 
-/* remove later */
 /* header,
 main,
+section,
+section.early-access,
 section.features {
     display: none;
 } */
 footer {
   position: relative;
   margin-top: auto;
-  margin-bottom: 5px;
   background-color: var(--x-d-blue);
   color: white;
   padding: 2.375rem 1.5rem;
@@ -311,6 +429,16 @@ footer .footer-logo {
 }
 footer .footer-logo svg path {
   fill: white;
+}
+@media (min-width: 48.75em) {
+  footer {
+    padding: 4.25rem 3rem;
+  }
+}
+
+.footer-container {
+  width: min(100%, 90rem);
+  margin-inline: auto;
 }
 
 .footer-menu {
@@ -359,14 +487,58 @@ footer .footer-logo svg path {
 .footer-menu .socials a .fa-brands {
   font-size: 1rem;
 }
+@media (min-width: 48.75em) {
+  .footer-menu {
+    flex-direction: row;
+    align-items: center;
+    gap: 15%;
+  }
+  .footer-menu .contacts {
+    margin-bottom: auto;
+  }
+  .footer-menu .footer-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 9.375rem;
+  }
+  .footer-menu .footer-nav a:hover {
+    color: var(--bright-blue-hover);
+  }
+  .footer-menu .socials {
+    margin-bottom: auto;
+  }
+  .footer-menu .socials a:hover {
+    color: var(--bright-blue-hover);
+    border-color: var(--bright-blue-hover);
+  }
+}
 
 .attribution {
   position: absolute;
-  bottom: 0;
-  font-size: 11px;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9375rem;
   text-align: center;
+  color: var(--l-gray);
 }
 
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  color: var(--l-grayish-blue);
+  position: relative;
+}
+.attribution a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-inline: auto;
+  width: 0;
+  height: 2px;
+  background-color: var(--l-grayish-blue);
+  transition: width 0.4s ease-in-out;
+}
+.attribution a:hover::after {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
