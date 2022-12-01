@@ -11,6 +11,7 @@ main {
     gap: f.rem(48);
 
     article {
+        width: min(100%, f.rem(700));
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -24,6 +25,35 @@ main {
         p {
             color: var(--x-d-blue);
             font-size: f.rem(15);
+        }
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        flex-direction: row-reverse;
+        justify-content: unset;
+
+        article {
+            text-align: left;
+
+            h1 {
+                font-size: f.rem(35);
+                line-height: 1.5;
+            }
+
+            .form {
+                display: grid;
+                gap: f.rem(0);
+                grid-template-columns: 60% 40%;
+
+                .email-container {
+                    width: 100%;
+
+                    input {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
         }
     }
 }
@@ -123,6 +153,33 @@ section.features {
             }
         }
     }
+
+    @include bp.breakpointMin(medium-screen) {
+        flex-direction: row-reverse;    
+        
+        article {
+            h2 {
+                text-align: left;
+                font-size: f.rem(40);
+            }
+
+            p {
+                width: min(100%, f.rem(500));
+            }
+
+            .link {
+                width: 30%;
+                margin: 0;
+                a {
+                    text-align: left;
+                }
+            }
+
+            .testimonial {
+                margin: 0;
+            }
+        }
+    }
 }
 
 section.early-access {
@@ -132,6 +189,7 @@ section.early-access {
     text-align: center;
 
     article {
+        width: min(100%, f.rem(470));
         display: grid;
         gap: f.rem(24);
         margin-bottom: f.rem(24);
@@ -143,6 +201,39 @@ section.early-access {
         p {
             font-size: f.rem(15);
             line-height: 1.5;
+        }
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        padding: f.rem(64);
+        display: flex;
+        justify-content: space-between;
+        /* gap: f.rem(400); */
+
+        article {
+            text-align: left;
+
+            h3 {
+                font-size: f.rem(32);
+            }
+        }
+
+        .form-2 {
+            width: 40%;
+
+            .email-container {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    outline: none;
+                }
+            }
+
+            button {
+                width: 45%;
+                margin-right: auto;
+            }
         }
     }
 }
